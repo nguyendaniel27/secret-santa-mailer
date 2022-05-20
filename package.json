@@ -1,0 +1,15 @@
+{
+  "name": "secret-santa-mailer",
+  "version": "1.0.0",
+  "description": "Simple webserver app to record user inputs with restrictions, then match said users and send their matches to them.",
+  "main": "node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "ws": "^8.6.0"
+  }
+}

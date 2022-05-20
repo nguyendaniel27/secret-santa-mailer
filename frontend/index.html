@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <link rel="stylesheet" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="main">
+            <div class="main__added-scroll" id="uCardArea">
+                <div class="main__added-scroll__card template" id="uCardTemplate">
+
+                    <div class="name-card__section-left">
+                        <div class="name-card__top-seperator">
+                            <div class="name-card__name-container">
+                                <div class="name-card__name-container__sub-elem">
+                                    <div class="name-card__f-name">
+                                        Daniel
+                                    </div>
+                                    <div class="name-card__l-name">
+                                        Nguyen
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="name-card__exclusion-list">
+                                <div class="exclusion-card template">
+                                    <div class="exclusion-card__uid">
+                                        UID1
+                                    </div>
+                                    <div class="exclusion-card__delete" onclick="deleteECard(this)">
+                                        Delete
+                                    </div>
+                                    <div class="spacer"></div>
+                                </div>
+                            </div>
+                            <div class="spacer"></div>
+                        </div>
+                        <div class="name-card__email-outer">
+                            <div class="name-card__email">
+                                daniels.nguyen.us@gmail.com
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="name-card__section-right">
+                        <div class="name-card__UID">
+                            UID: <div class="name-card__UID-text">ABCDEF</div>
+                        </div>
+                        <div class="name-card__input-field"> 
+                            <input class="name-card__exclusion-input" placeholder="Exclusion UID" autocomplete="off" readonly onfocus="this.removeAttribute('readonly');">
+
+                            </input>
+                            <div class="name-card__exclusion-submit" onclick="submitECard(this)">
+                                Submit
+                            </div>
+                        </div>
+                        <div class="name-card__delete__outer">
+                            <div class="name-card__delete" onclick="deleteUserCard(this)">
+                                Delete
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="spacer"></div>
+                </div>
+            </div>
+            <div class="main__edit-window">
+                <div class="main__edit-window__upper">
+                    <div class="main__edit-window__upper__name">
+                        <input id="fin" class="main__edit-window__upper__name__fname" placeholder="First Name" autocomplete="first-non-broser-user" readonly onfocus="this.removeAttribute('readonly');"></input>
+                        <input id="lin" class="main__edit-window__upper__name__lname" placeholder="Last Name" autocomplete="last-non-browser-user" readonly onfocus="this.removeAttribute('readonly');"></input>
+                    </div>
+                    <div class="main__edit-window__upper__email__outer">
+                        <input id="ein" class="main__edit-window__upper__email" placeholder="Email" autocomplete="email-non-browser-user" readonly onfocus="this.removeAttribute('readonly');"></input>
+                    </div>
+                    <div class="main__edit-window__upper__controls">
+                        <div class="main__edit-window__upper__controls__submit" onclick="submitUserCard()">
+                            Submit
+                        </div>
+                        <div class="main__edit-window__upper__controls__clear">
+                            Clear
+                        </div>
+                    </div>
+                    <div class="main__edit-window__upper__generate__outer">
+                        <div class="main__edit-window__upper__generate" onclick="generatePairs()">
+                            Generate
+                        </div>
+                    </div>
+                </div>
+                <div class="main__edit-window__lower">
+                    <div class="main__edit-window__lower__error-box" id="errorBox">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="script.js"></script>
+</html>
