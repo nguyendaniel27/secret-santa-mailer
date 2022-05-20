@@ -271,7 +271,7 @@ function generatePairs() {
             break
         }
 
-        if (timeout == 1000) { // tries 1k times, a more efficent way probably exists
+        if (timeout == 5000) { // tries 1k times, a more efficent way probably exists
 
             errorLog("Error: Something went wrong generating the matches. Please check your exclusions, or try again.")
 

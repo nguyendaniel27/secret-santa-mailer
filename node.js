@@ -1,9 +1,21 @@
 // defines
-var express = require('express');
+const readlineSync = require('readline-sync');
+const dirTree = require("directory-tree");
+const express = require('express');
 const fs = require('fs');
-var WebSocketServer = require("ws").Server
-var app = express()
+const WebSocketServer = require("ws").Server
+const app = express()
 
+if (dirTree('./data/').children.length > 0) {
+    let delFiles = readlineSync.keyInYN("The output 'data' folder contains files, which may be from previous runs of the program. Would you like to remove them?")
+
+    if (delFiles) {
+        let files = dirTree('./data/').children
+        for (file of files) {
+            fs.unlinkSync('./' + file.path)
+        }
+    }
+}
 
 // send frontend index on root
 app.get('/', function (req, res) {
