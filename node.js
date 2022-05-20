@@ -6,6 +6,10 @@ const fs = require('fs');
 const WebSocketServer = require("ws").Server
 const app = express()
 
+
+// verifies whether or not data folder has files in it,
+// as that could lead to confusion if they are not removed.
+// probably could be done better, but oh well
 if (dirTree('./data/').children.length > 0) {
     let delFiles = readlineSync.keyInYN("The output 'data' folder contains files, which may be from previous runs of the program. Would you like to remove them?")
 
